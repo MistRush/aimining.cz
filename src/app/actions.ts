@@ -28,7 +28,7 @@ export async function submitWaitlist(prevState: any, formData: FormData) {
 
         // 2. Send Notification to Admin
         await resend.emails.send({
-            from: "AiMining <onboarding@resend.dev>", // Update this once you verify domain
+            from: "AiMining <connect@aimining.cz>",
             to: "connect@aimining.cz",
             subject: `New Waitlist Signup: ${email}`,
             html: `<p>New user joined the waitlist:</p>
@@ -38,7 +38,7 @@ export async function submitWaitlist(prevState: any, formData: FormData) {
 
         // 3. Send Confirmation to User
         await resend.emails.send({
-            from: "AiMining <onboarding@resend.dev>",
+            from: "AiMining <connect@aimining.cz>",
             to: email,
             subject: "Vítejte v revoluci AiMining",
             html: `<h1>Vítejte v AiMining!</h1>
@@ -79,7 +79,7 @@ export async function submitInvestorQuery(prevState: any, formData: FormData) {
 
         // 2. Send Notification to Admin
         await resend.emails.send({
-            from: "AiMining <onboarding@resend.dev>",
+            from: "AiMining <connect@aimining.cz>",
             to: "connect@aimining.cz",
             subject: `New Investor Lead: ${name}`,
             html: `<h1>New Investor Inquiry</h1>
