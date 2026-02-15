@@ -35,7 +35,7 @@ export function Roadmap() {
                                 className={`relative flex flex-col md:flex-row gap-8 md:gap-0 items-center w-full ${i % 2 === 0 ? "md:flex-row-reverse" : ""}`}
                             >
                                 {/* Content */}
-                                <div className="w-full md:w-1/2 pl-12 md:pl-0 md:px-8">
+                                <div className="w-full md:w-1/2 pl-12 md:pl-8 md:pr-8">
                                     <div className={`p-6 rounded-xl border border-white/5 bg-secondary/30 backdrop-blur-sm hover:border-primary/50 transition-colors ${i % 2 === 0 ? "md:text-left" : "md:text-right"}`}>
                                         <h3 className="text-xl font-bold text-primary mb-2 font-mono">{q.title.split(":")[0]}</h3>
                                         <h4 className="text-white font-semibold mb-2">{q.title.split(":")[1]}</h4>

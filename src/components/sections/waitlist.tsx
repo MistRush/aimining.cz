@@ -1,14 +1,17 @@
 "use client";
 
+import { submitWaitlist } from "@/app/actions";
 import { useLanguage } from "@/components/language-provider";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useActionState, useState } from "react";
+import { useFormStatus } from "react-dom";
 
 export function Waitlist() {
     const { t } = useLanguage();
     const [role, setRole] = useState<"provider" | "developer" | "investor">("provider");
+    const [state, formAction] = useActionState(submitWaitlist, { message: "", success: false });
 
     return (
         <section id="waitlist" className="py-24 bg-background relative border-t border-white/5">
@@ -25,10 +28,23 @@ export function Waitlist() {
                         {t.waitlist.title}
                     </h2>
 
-                    <form className="max-w-md mx-auto space-y-6" onSubmit={(e) => e.preventDefault()}>
+                    {/* Validation Message */}
+                    {state.message && (
+                        <motion.div
+                            initial={{ opacity: 0, y: -10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            className={`mb-6 p-3 rounded-md text-sm text-center ${state.success ? "bg-green-500/10 text-green-400 border border-green-500/20" : "bg-red-500/10 text-red-400 border border-red-500/20"}`}
+                        >
+                            {state.message}
+                        </motion.div>
+                    )}
+
+                    <form className="max-w-md mx-auto space-y-6" action={formAction}>
                         <div className="space-y-4">
                             <div className="text-left">
                                 <label className="text-sm font-medium text-slate-300 ml-1 mb-2 block">{t.waitlist.role}</label>
+                                {/* Hidden input to pass state to server action */}
+                                <input type="hidden" name="role" value={role} />
                                 <div className="grid grid-cols-3 gap-2">
                                     {[
                                         { id: "provider", label: t.waitlist.roleProvider },
@@ -49,16 +65,25 @@ export function Waitlist() {
 
                             <div className="space-y-2 text-left">
                                 <label className="text-sm font-medium text-slate-300 ml-1">{t.waitlist.email}</label>
-                                <Input type="email" placeholder="name@example.com" className="bg-background/80" />
+                                <Input type="email" name="email" placeholder="name@example.com" className="bg-background/80" required />
                             </div>
                         </div>
 
-                        <Button size="lg" className="w-full text-lg shadow-[0_0_15px_rgba(211,84,0,0.3)]">
-                            {t.waitlist.submit}
-                        </Button>
+                        <SubmitButton label={t.waitlist.submit} />
                     </form>
                 </motion.div>
             </div>
         </section>
     );
 }
+
+function SubmitButton({ label }: { label: string }) {
+    const { pending } = useFormStatus();
+
+    return (
+        <Button disabled={pending} size="lg" className="w-full text-lg shadow-[0_0_15px_rgba(211,84,0,0.3)]">
+            {pending ? "Odesílám..." : label}
+        </Button>
+    );
+}
+
