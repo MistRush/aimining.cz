@@ -20,7 +20,7 @@ export function EarningsCalculator() {
     const yearlyEarnings = dailyEarnings * 365;
 
     return (
-        <section className="py-24 bg-black relative overflow-hidden">
+        <section className="py-16 md:py-24 bg-black relative overflow-hidden">
             {/* Background Elements */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-7xl pointer-events-none">
                 <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-orange-500/10 rounded-full blur-[100px]" />
@@ -32,19 +32,19 @@ export function EarningsCalculator() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="text-center mb-16"
+                    className="text-center mb-12 md:mb-16"
                 >
-                    <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+                    <h2 className="text-3xl md:text-5xl font-bold mb-4 md:mb-6 text-white">
                         Spočítejte si svůj <span className="text-orange-500">výdělek</span>
                     </h2>
-                    <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+                    <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto px-4">
                         Váš hardware může vydělávat, když spíte. Pronajměte svůj výkon pro AI trénink.
                     </p>
                 </motion.div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto items-center">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 max-w-5xl mx-auto items-center">
                     {/* Controls */}
-                    <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 space-y-8">
+                    <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 md:p-8 space-y-6 md:space-y-8">
                         <div>
                             <label className="block text-gray-300 mb-4 font-medium">Vyberte váš model GPU</label>
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -57,7 +57,7 @@ export function EarningsCalculator() {
                                                 : "bg-black/20 border-white/10 text-gray-400 hover:border-white/30"
                                             }`}
                                     >
-                                        <div className="font-bold">{gpu.model}</div>
+                                        <div className="font-bold text-sm md:text-base">{gpu.model}</div>
                                         <div className="text-xs opacity-70 flex items-center gap-1 mt-1">
                                             <Cpu size={12} /> {gpu.vram}
                                         </div>
@@ -89,17 +89,17 @@ export function EarningsCalculator() {
                     </div>
 
                     {/* Results */}
-                    <div className="relative">
+                    <div className="relative mt-8 lg:mt-0">
                         <div className="absolute inset-0 bg-gradient-to-r from-orange-600 to-orange-400 rounded-2xl blur-xl opacity-20 animate-pulse" />
-                        <div className="bg-black/80 backdrop-blur-md border border-orange-500/30 rounded-2xl p-8 relative">
-                            <h3 className="text-2xl font-bold text-white mb-8 border-b border-white/10 pb-4">
+                        <div className="bg-black/80 backdrop-blur-md border border-orange-500/30 rounded-2xl p-6 md:p-8 relative">
+                            <h3 className="text-xl md:text-2xl font-bold text-white mb-6 md:mb-8 border-b border-white/10 pb-4">
                                 Potenciální příjem
                             </h3>
 
                             <div className="space-y-6">
                                 <div className="flex items-center justify-between">
                                     <span className="text-gray-400">Denně</span>
-                                    <span className="text-2xl font-bold text-white flex items-center">
+                                    <span className="text-xl md:text-2xl font-bold text-white flex items-center">
                                         <DollarSign className="w-5 h-5 text-orange-500" />
                                         {dailyEarnings.toFixed(2)}
                                     </span>
@@ -107,7 +107,7 @@ export function EarningsCalculator() {
 
                                 <div className="flex items-center justify-between">
                                     <span className="text-gray-400">Měsíčně</span>
-                                    <span className="text-3xl font-bold text-orange-400 flex items-center">
+                                    <span className="text-2xl md:text-3xl font-bold text-orange-400 flex items-center">
                                         <DollarSign className="w-6 h-6" />
                                         {monthlyEarnings.toFixed(0)}
                                     </span>
@@ -115,7 +115,7 @@ export function EarningsCalculator() {
 
                                 <div className="flex items-center justify-between pt-4 border-t border-white/10">
                                     <span className="text-gray-400 font-medium">Ročně</span>
-                                    <span className="text-4xl font-bold text-white flex items-center">
+                                    <span className="text-3xl md:text-4xl font-bold text-white flex items-center">
                                         <DollarSign className="w-8 h-8 text-green-500" />
                                         {yearlyEarnings.toLocaleString(undefined, { maximumFractionDigits: 0 })}
                                     </span>
@@ -123,8 +123,8 @@ export function EarningsCalculator() {
                             </div>
 
                             <div className="mt-8 pt-6 border-t border-white/10">
-                                <div className="flex items-start gap-3 text-sm text-gray-400">
-                                    <Zap className="w-4 h-4 text-orange-500 mt-0.5" />
+                                <div className="flex items-start gap-3 text-xs md:text-sm text-gray-400">
+                                    <Zap className="w-4 h-4 text-orange-500 mt-0.5 shrink-0" />
                                     <p>Odhad je založen na aktuálních tržních cenách. Skutečný výdělek se může lišit dle poptávky a ceny elektřiny.</p>
                                 </div>
                             </div>
