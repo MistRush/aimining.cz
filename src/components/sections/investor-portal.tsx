@@ -77,7 +77,7 @@ export function InvestorPortal() {
                     <div className="h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent mb-8"></div>
                     <div className="flex flex-col md:flex-row justify-between items-center gap-4">
                         <p>© {new Date().getFullYear()} AI Mining Network. {t.footer.rights}</p>
-                        <a href="mailto:hello@aimining.cz" className="text-slate-400 hover:text-primary transition-colors">
+                        <a href="mailto:connect@aimining.cz" className="text-slate-400 hover:text-primary transition-colors">
                             {t.footer.contact}
                         </a>
                     </div>

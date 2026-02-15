@@ -68,7 +68,7 @@ export const content = {
         },
         footer: {
             rights: "Všechna práva vyhrazena.",
-            contact: "Kontakt: hello@aimining.cz",
+            contact: "Kontakt: connect@aimining.cz",
         }
     },
     en: {
@@ -140,7 +140,7 @@ export const content = {
         },
         footer: {
             rights: "All rights reserved.",
-            contact: "Contact: hello@aimining.cz",
+            contact: "Contact: connect@aimining.cz",
         }
     }
 };
