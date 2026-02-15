@@ -29,7 +29,7 @@ export async function submitWaitlist(prevState: any, formData: FormData) {
         // 2. Send Notification to Admin
         await resend.emails.send({
             from: "AiMining <connect@aimining.cz>",
-            to: "connect@aimining.cz",
+            to: ["connect@aimining.cz", "mirekstudnik@gmail.com"],
             subject: `New Waitlist Signup: ${email}`,
             html: `<p>New user joined the waitlist:</p>
                    <p><strong>Email:</strong> ${email}</p>
@@ -80,7 +80,7 @@ export async function submitInvestorQuery(prevState: any, formData: FormData) {
         // 2. Send Notification to Admin
         await resend.emails.send({
             from: "AiMining <connect@aimining.cz>",
-            to: "connect@aimining.cz",
+            to: ["connect@aimining.cz", "mirekstudnik@gmail.com"],
             subject: `New Investor Lead: ${name}`,
             html: `<h1>New Investor Inquiry</h1>
                    <p><strong>Name:</strong> ${name}</p>
