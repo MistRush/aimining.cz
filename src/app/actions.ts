@@ -40,7 +40,7 @@ export async function submitWaitlist(prevState: any, formData: FormData) {
         await resend.emails.send({
             from: "AiMining <connect@aimining.cz>",
             to: email,
-            subject: "Vítejte v revoluci AiMining",
+            subject: "Vítejte v AiMining - Potvrzení registrace",
             html: `<h1>Vítejte v AiMining!</h1>
                    <p>Děkujeme za registraci na čekací listinu. Budeme vás informovat, jakmile se otevře přístup.</p>
                    <p>S pozdravem,</p>

@@ -14,8 +14,17 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "aimining.cz - Decentralized AI Compute Marketplace",
-  description: "Rent or provide distributed GPU/CPU power for AI training.",
+  title: "AiMining.cz | Pronajměte výkon své grafické karty",
+  description: "Vydělávejte pasivní příjem pronájmem GPU pro AI výpočty. Vstupte do éry decentralizovaných AI službách.",
+  keywords: ["AI mining", "pronájem GPU", "pasivní příjem", "NVIDIA", "crypto", "AI infrastruktura"],
+  openGraph: {
+    title: "AiMining.cz - Vydělávejte na AI infrastruktuře",
+    description: "Máte výkonnou grafiku? Nenechte ji zahálet. Pronajměte ji pro trénování AI a vydělávejte.",
+    url: "https://aimining.cz",
+    siteName: "AiMining.cz",
+    locale: "cs_CZ",
+    type: "website",
+  },
 };
 
 export default function RootLayout({

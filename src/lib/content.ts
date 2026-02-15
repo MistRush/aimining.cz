@@ -6,7 +6,7 @@ export const content = {
             cta: "Spustit aplikaci",
         },
         hero: {
-            headline: "Těžební výkon pro AI revoluci.",
+            headline: "Těžební výkon pro AI éru.",
             subHeadline: "Pronajímejte nebo získávejte distribuovaný výkon GPU/CPU pro trénování modelů. Levněji, rychleji a bezpečně.",
             ctaPrimary: "Poskytnout výkon",
             ctaSecondary: "Získat výkon",
