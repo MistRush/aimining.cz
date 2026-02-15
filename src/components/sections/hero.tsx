@@ -10,15 +10,20 @@ export function Hero() {
     const { t } = useLanguage();
 
     return (
-        <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#1B2631] via-[#0F1720] to-[#000000]">
-            {/* Background Elements */}
-            <div className="absolute inset-0 w-full h-full opacity-20">
-                <div className="absolute top-0 left-0 w-full h-full bg-[linear-gradient(rgba(211,84,0,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(211,84,0,0.05)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+        <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-black">
+            {/* Video Background */}
+            <div className="absolute inset-0 z-0">
+                <div className="absolute inset-0 bg-slate-900/60 z-10" /> {/* Dark overlay */}
+                <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="w-full h-full object-cover opacity-80"
+                >
+                    <source src="/trailer.mp4" type="video/mp4" />
+                </video>
             </div>
-
-            {/* Spotlights */}
-            <div className="absolute top-[-20%] left-[20%] w-[500px] h-[500px] bg-primary/20 blur-[120px] rounded-full mix-blend-screen animate-pulse"></div>
-            <div className="absolute bottom-[-10%] right-[10%] w-[400px] h-[400px] bg-accent/10 blur-[100px] rounded-full mix-blend-screen"></div>
 
             <div className="container mx-auto relative z-10 px-4 md:px-6 flex flex-col items-center text-center">
                 <motion.div
