@@ -32,10 +32,10 @@ export function Roadmap() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: i * 0.2 }}
-                                className={`relative flex flex-col md:flex-row gap-8 md:gap-0 ${i % 2 === 0 ? "md:flex-row-reverse" : ""}`}
+                                className={`relative flex flex-col md:flex-row gap-8 md:gap-0 items-center w-full ${i % 2 === 0 ? "md:flex-row-reverse" : ""}`}
                             >
                                 {/* Content */}
-                                <div className="md:w-1/2 pl-12 md:pl-0 md:px-12">
+                                <div className="w-full md:w-1/2 pl-12 md:pl-0 md:px-12">
                                     <div className={`p-6 rounded-xl border border-white/5 bg-secondary/30 backdrop-blur-sm hover:border-primary/50 transition-colors ${i % 2 === 0 ? "md:text-left" : "md:text-right"}`}>
                                         <h3 className="text-xl font-bold text-primary mb-2 font-mono">{q.title.split(":")[0]}</h3>
                                         <h4 className="text-white font-semibold mb-2">{q.title.split(":")[1]}</h4>
@@ -44,8 +44,10 @@ export function Roadmap() {
                                 </div>
 
                                 {/* Timeline Dot */}
-                                <div className="absolute left-[20px] md:left-1/2 md:-translate-x-1/2 top-6 w-3 h-3 rounded-full bg-primary shadow-[0_0_10px_rgba(211,84,0,0.8)] z-10">
-                                    <div className="absolute inset-0 rounded-full bg-primary animate-ping opacity-75"></div>
+                                <div className="absolute left-[20px] md:left-1/2 md:-translate-x-1/2 top-0 bottom-0 flex items-center justify-center w-8 z-10">
+                                    <div className="w-3 h-3 rounded-full bg-primary shadow-[0_0_10px_rgba(211,84,0,0.8)] relative">
+                                        <div className="absolute inset-0 rounded-full bg-primary animate-ping opacity-75"></div>
+                                    </div>
                                 </div>
 
                                 {/* Empty Space for alignment */}

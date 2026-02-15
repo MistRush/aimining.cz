@@ -21,6 +21,9 @@ export function Navbar() {
 
                 <div className="flex items-center gap-6">
                     <div className="hidden md:flex items-center gap-6 text-sm font-medium text-slate-300">
+                        <a href="mailto:connect@aimining.cz" className="hover:text-primary transition-colors">
+                            connect@aimining.cz
+                        </a>
                         <Link href="#investors" className="hover:text-primary transition-colors">
                             {t.nav.investors}
                         </Link>
