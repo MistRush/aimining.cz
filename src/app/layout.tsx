@@ -1,0 +1,37 @@
+import type { Metadata } from "next";
+import { Inter, Space_Grotesk } from "next/font/google";
+import "./globals.css";
+import { LanguageProvider } from "@/components/language-provider";
+
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+});
+
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space-grotesk",
+  subsets: ["latin"],
+});
+
+export const metadata: Metadata = {
+  title: "aimining.cz - Decentralized AI Compute Marketplace",
+  description: "Rent or provide distributed GPU/CPU power for AI training.",
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="cs" suppressHydrationWarning>
+      <body
+        className={`${inter.variable} ${spaceGrotesk.variable} antialiased font-sans bg-background text-foreground`}
+      >
+        <LanguageProvider>
+          {children}
+        </LanguageProvider>
+      </body>
+    </html>
+  );
+}
