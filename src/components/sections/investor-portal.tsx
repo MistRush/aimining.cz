@@ -75,7 +75,12 @@ export function InvestorPortal() {
             <footer className="mt-24 text-center text-slate-600 text-sm">
                 <div className="container">
                     <div className="h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent mb-8"></div>
-                    <p>© {new Date().getFullYear()} AI Mining Network. {t.footer.rights}</p>
+                    <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+                        <p>© {new Date().getFullYear()} AI Mining Network. {t.footer.rights}</p>
+                        <a href="mailto:hello@aimining.cz" className="text-slate-400 hover:text-primary transition-colors">
+                            {t.footer.contact}
+                        </a>
+                    </div>
                 </div>
             </footer>
         </section>
